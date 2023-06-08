@@ -24,4 +24,8 @@ ss = json.dumps({"meta": meta, "text": text}, ensure_ascii=False)
 out.write(ss + "\n")
 ```
 
-
+# binidx merge tool
+Takes a list of binidx datasets and merges them into a single one.
+```bash
+python tools/merge_binidx.py --input $(find $input_path -name "*.idx" | sed 's/\.idx//g') --output output_merged --vocab ./20B_tokenizer.json --tokenizer-type HFTokenizer
+```
